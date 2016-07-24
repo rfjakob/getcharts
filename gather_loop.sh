@@ -26,8 +26,8 @@ while true; do
 		COLS="$COLS	$(time_get $URL)"
 	done
 	echo "$COLS" >> frontpage.csv
-	# Minimum of 60 secs between polls
-	sleep 60
-	# Plus some random delay
-	sleep $((RANDOM % 19))
+	# Minimum of 500 secs between polls
+	sleep 500
+	# Plus some random delay => Average is 600 seconds
+	sleep $((RANDOM % 120))
 done
