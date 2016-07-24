@@ -20,7 +20,6 @@ while true; do
 	mouser=$(time_get http://www.mouser.at/)
 	digikey=$(time_get http://www.digikey.at/)
 	t=$(date +%s)
-	echo "$t	$farnell	$rs	$mouser	$digikey" #>> frontpage.csv	
-	exit 0
+	echo "$t	$farnell	$rs	$mouser	$digikey" >> frontpage.csv
 	sleep 60
 done
