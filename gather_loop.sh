@@ -21,7 +21,7 @@ echo "Unixtime	$URLS" >> frontpage.csv
 
 # gather loop
 while true; do
-	COLS="$(date +%s)	"
+	COLS="$(date +%s)"
 	for URL in $URLS; do
 		COLS="$COLS	$(time_get $URL)"
 	done
