@@ -17,7 +17,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
 			pointSize: 2,
 			highlightSeriesOpts: { pointSize: 3 },
 			highlightSeriesBackgroundAlpha: 0.1,
-			colors: [ '#f88802', '#EE1111', '#004B85', '#000000' ]
+			colors: [ '#f88802', '#EE1111', '#004B85', '#000000' ],
+			ylabel: "seconds",
+			title: "Response Time"
 		}
 	);
 });
@@ -32,7 +34,18 @@ font-family: sans-serif;
 <h1>Frontpage Response Times</h1>
 <p>
 ... of the four biggest electronic distributors: Farnell, RS, Mouser, Digikey.
-You can download the raw data <a href="frontpage.txt">here</a>.
+The data is gathered using essentially "time wget $URL" and includes
+DNS resolution and redirect time. You can download the raw CSV
+<a href="frontpage.txt">here</a>.
 </p>
 <div id="chart" style="width: 100%"></div>
+<!-- x axis labels stick out on the bottom, add some whitespace -->
+<div style="height: 60px"></div>
+<p>
+Limitations:
+<ul>
+<li>Mouser does not return a complete page if no cookies are set
+(and is still slower than Digikey!)</li>
+</ul>
+</p>
 </body>
