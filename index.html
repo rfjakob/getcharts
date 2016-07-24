@@ -1,0 +1,38 @@
+<html>
+<head>
+<title>getcharts</title>
+<script src="dygraph-combined.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function(event) {
+	new Dygraph(
+		document.getElementById("chart"),
+		"frontpage.csv",
+		{
+			xValueFormatter: Dygraph.dateString_,
+			xValueParser: function(x) { return 1000*parseInt(x); },
+			xTicker: Dygraph.dateTicker,
+			drawPoints: true,
+			strokeWidth: 0.1,
+			legend: "always",
+			pointSize: 2,
+			highlightSeriesOpts: { pointSize: 3 },
+			highlightSeriesBackgroundAlpha: 0.1,
+			colors: [ '#f88802', '#EE1111', '#004B85', '#000000' ]
+		}
+	);
+});
+</script>
+<style>
+* {
+font-family: sans-serif;
+}
+</style>
+</head>
+<body>
+<h1>Frontpage Response Times</h1>
+<p>
+... of the four biggest electronic distributors: Farnell, RS, Mouser, Digikey.
+You can download the raw data <a href="frontpage.csv">here</a>.
+</p>
+<div id="chart" style="width: 100%"></div>
+</body>
