@@ -1,0 +1,7 @@
+# Put this file into ~/.config/systemd/user
+# Also, you must "sudo loginctl enable-linger USERNAME"!
+
+[Service]
+ExecStart=/home/jakob/getcharts/gather_loop.sh
+Restart=always
+RestartSec=10
