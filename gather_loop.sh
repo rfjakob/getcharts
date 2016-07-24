@@ -8,18 +8,23 @@ function time_get {
 	if [ $? -eq 0 ]; then
 		echo $t
 	else
-		# wget returned an error.
+		# wget returned an error
 		echo "NaN"
 	fi
 }
 
+# Tab-separated URLs to fetch
+URLS="http://at.farnell.com/	http://at.rs-online.com/	http://www.mouser.at/	http://www.digikey.at/"
+
+# Write column header
+echo "Unixtime	$URLS" >> frontpage.csv
+
 # gather loop
 while true; do
-	farnell=$(time_get http://at.farnell.com/)
-	rs=$(time_get http://at.rs-online.com/)
-	mouser=$(time_get http://www.mouser.at/)
-	digikey=$(time_get http://www.digikey.at/)
-	t=$(date +%s)
-	echo "$t	$farnell	$rs	$mouser	$digikey" >> frontpage.csv
+	COLS="$(date +%s)	"
+	for URL in $URLS; do
+		COLS="$COLS	$(time_get $URL)"
+	done
+	echo "$COLS" >> frontpage.csv
 	sleep 60
 done
