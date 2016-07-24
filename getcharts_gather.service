@@ -5,3 +5,6 @@
 ExecStart=/home/jakob/public_html/nuetzlich.net/getcharts/gather_loop.sh
 Restart=always
 RestartSec=10
+
+[Install]
+WantedBy=default.target
