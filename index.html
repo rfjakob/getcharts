@@ -26,7 +26,10 @@ document.addEventListener("DOMContentLoaded", function(event) {
 </script>
 <style>
 * {
-font-family: sans-serif;
+	font-family: sans-serif;
+}
+div#notes {
+	max-width: 600px;
 }
 </style>
 </head>
@@ -41,7 +44,7 @@ DNS resolution and redirect time. You can download the raw CSV
 <div id="chart" style="width: 100%"></div>
 <!-- x axis labels stick out on the bottom, add some whitespace -->
 <div style="height: 60px"></div>
-<p>
+<div id="notes">
 Notes:
 <ul>
 <li>Since Jul 25, 2016, the poll intervall is 10 minutes.</li>
@@ -58,5 +61,5 @@ The backend seems to be written in ASP.NET.</li>
 up to 2 seconds. It seems to be written in Java (JSF).
 The frontend is hosted on Akamai (server: AkamaiGHost).</li>
 </ul>
-</p>
+</div>
 </body>
