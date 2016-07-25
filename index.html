@@ -26,22 +26,22 @@ document.addEventListener("DOMContentLoaded", function(event) {
 });
 </script>
 <style>
-* {
+h1, h4, div {
 	font-family: sans-serif;
 }
-div#notes {
-	max-width: 600px;
+div#notes, div#intro {
+	max-width: 800px;
 }
 </style>
 </head>
 <body>
 <h1>Slow Electronics ⌛</h1>
-<p>
+<div id="intro">
 Frontpage response times of the four biggest electronic distributors: Farnell, RS, Mouser, Digikey.
-The data is gathered using essentially "curl -L -w %{time_total} $URL" and includes
+The data is gathered using essentially "<code>curl -L -w %{time_total} $URL</code>" and includes
 DNS resolution and redirect time. You can download the raw CSV
 <a href="frontpage.txt">here</a>.
-</p>
+</div>
 <div id="chart" style="width: 100%"></div>
 <!-- x axis labels stick out on the bottom, add some whitespace -->
 <div style="height: 100px"></div>
