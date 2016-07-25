@@ -6,7 +6,7 @@
 document.addEventListener("DOMContentLoaded", function(event) {
 	new Dygraph(
 		document.getElementById("chart"),
-		"frontpage.csv",
+		"frontpage.txt",
 		{
 			xValueFormatter: Dygraph.dateString_,
 			xValueParser: function(x) { return 1000*parseInt(x); },
