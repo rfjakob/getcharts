@@ -42,10 +42,21 @@ DNS resolution and redirect time. You can download the raw CSV
 <!-- x axis labels stick out on the bottom, add some whitespace -->
 <div style="height: 60px"></div>
 <p>
-Limitations:
+Notes:
 <ul>
+<li>Since Jul 25, 2016, the poll intervall is 10 minutes.</li>
 <li>Mouser does not return a complete page if no cookies are set
-(and is still slower than Digikey!)</li>
+(and is still a slower than Digikey). The backend seems to be written
+in ASP.NET. The frontend is hosted on Akamai.</li>
+<li>Farnell seems to have massive problems with its backend,
+with response times up to 5 seconds. It seems to be written in Java (JSP).
+The frontend is hosted on Akamai (server: AkamaiGHost).</li>
+<li>Digikey's fronted is hostend on <a href="https://www.instartlogic.com/">instart</a>.
+Overall, Digikey does a very good job with the lowest response times of the four.
+The backend seems to be written in ASP.NET.</li>
 </ul>
+<li>RS' backend also seems to be in trouble, with response times
+up to 2 seconds. It seems to be written in Java (JSF).
+The frontend is hosted on Akamai (server: AkamaiGHost).</li>
 </p>
 </body>
