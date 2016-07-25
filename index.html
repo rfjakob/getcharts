@@ -34,10 +34,10 @@ div#notes {
 </style>
 </head>
 <body>
-<h1>Frontpage Response Times</h1>
+<h1>Slow Electronics</h1>
 <p>
-... of the four biggest electronic distributors: Farnell, RS, Mouser, Digikey.
-The data is gathered using essentially "time wget $URL" and includes
+Frontpage response times of the four biggest electronic distributors: Farnell, RS, Mouser, Digikey.
+The data is gathered using essentially "curl -L -w %{time_total} $URL" and includes
 DNS resolution and redirect time. You can download the raw CSV
 <a href="frontpage.txt">here</a>.
 </p>
@@ -45,7 +45,7 @@ DNS resolution and redirect time. You can download the raw CSV
 <!-- x axis labels stick out on the bottom, add some whitespace -->
 <div style="height: 100px"></div>
 <div id="notes">
-Notes:
+<h4>Notes:</h4>
 <ul>
 <li>Since Jul 25, 2016, the poll intervall is 10 minutes.</li>
 <li>Mouser does not return a complete page if no cookies are set
@@ -57,7 +57,7 @@ The frontend is hosted on Akamai (server: AkamaiGHost).</li>
 <li>Digikey's fronted is hostend on <a href="https://www.instartlogic.com/">instart</a>.
 Overall, Digikey does a very good job with the lowest response times of the four.
 The backend seems to be written in ASP.NET.</li>
-<li>RS' backend also seems to be in trouble, with response times
+<li>RS' backend is mediocre, with response times
 up to 2 seconds. It seems to be written in Java (JSF).
 The frontend is hosted on Akamai (server: AkamaiGHost).</li>
 </ul>
