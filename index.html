@@ -37,7 +37,12 @@ div#notes, div#intro {
 <body>
 <h1>Slow Electronics ⌛</h1>
 <div id="intro">
-Frontpage response times of the four biggest electronic distributors: Farnell, RS, Mouser, Digikey.
+Frontpage response times of the four biggest electronic distributors:
+<a href="http://at.farnell.com/">Farnell</a>,
+<a href="http://at.rs-online.com/">RS</a>,
+<a href="http://www.mouser.at/">Mouser</a>,
+<a href="http://www.digikey.at/">Digikey</a>.
+Updated every 10 minutes.
 The data is gathered using essentially "<code>curl -L -w %{time_total} $URL</code>" and includes
 DNS resolution and redirect time. You can download the raw CSV
 <a href="frontpage.txt">here</a>.
@@ -48,19 +53,19 @@ DNS resolution and redirect time. You can download the raw CSV
 <div id="notes">
 <h4>Notes:</h4>
 <ul>
-<li>Since Jul 25, 2016, the poll intervall is 10 minutes.</li>
-<li>Mouser does not return a complete page if no cookies are set
-(and is still a slower than Digikey). The backend seems to be written
-in ASP.NET. The frontend is hosted on Akamai.</li>
 <li>Farnell seems to have massive problems with its backend,
-with response times up to 5 seconds. It seems to be written in Java (JSP).
+with peak response times over 8 seconds.
+It seems to be written in Java (JSP).
 The frontend is hosted on Akamai (server: AkamaiGHost).</li>
-<li>Digikey's fronted is hostend on <a href="https://www.instartlogic.com/">instart</a>.
-Overall, Digikey does a very good job with the lowest response times of the four.
-The backend seems to be written in ASP.NET.</li>
 <li>RS' backend is mediocre, with response times
 up to 2 seconds. It seems to be written in Java (JSF).
 The frontend is hosted on Akamai (server: AkamaiGHost).</li>
+<li>Mouser does not return a complete page if no cookies are set
+(and is still a slower than Digikey). The backend seems to be written
+in ASP.NET. The frontend is hosted on Akamai.</li>
+<li>Digikey's fronted is hostend on Instart Logic.
+Overall, Digikey does a very good job with the lowest response times of the four.
+The backend seems to be written in ASP.NET.</li>
 </ul>
 </div>
 </body>
