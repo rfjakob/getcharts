@@ -9,17 +9,17 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		document.getElementById("chart"),
 		"frontpage.txt",
 		{
-			valueRange: [0, 10],
+			valueRange: [0, 8.1],
 			xValueFormatter: Dygraph.dateString_,
 			xValueParser: function(x) { return 1000*parseInt(x); },
 			xTicker: Dygraph.dateTicker,
 			drawPoints: true,
-			strokeWidth: 0.1,
+			strokeWidth: 0.0,
 			legend: "always",
 			pointSize: 2.5,
-			highlightSeriesOpts: { pointSize: 3 },
+			highlightSeriesOpts: { pointSize: 3, strokeWidth: 0.1 },
 			highlightSeriesBackgroundAlpha: 0.1,
-			colors: [ '#f88802', '#EE1111', '#004B85', '#000000' ],
+			colors: [ '#f88802', '#ee1111', '#007acc', '#a6a6a6' ],
 			ylabel: "seconds",
 			title: "Response Time"
 		}
