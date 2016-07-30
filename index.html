@@ -9,6 +9,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		document.getElementById("chart"),
 		"frontpage.txt",
 		{
+			valueRange: [0, 10],
 			xValueFormatter: Dygraph.dateString_,
 			xValueParser: function(x) { return 1000*parseInt(x); },
 			xTicker: Dygraph.dateTicker,
