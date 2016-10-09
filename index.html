@@ -18,13 +18,16 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		highlightSeriesBackgroundAlpha: 0.1,
 		colors: [ '#f88802', '#ee1111', '#007acc', '#a6a6a6' ],
 		ylabel: "seconds",
-		//title: "Response Time"
+		title: "Frontpage response time (raw)"
 	}
 	new Dygraph(
 		document.getElementById("raw"),
 		"frontpage.txt",
 		opts
 	);
+	opts.title = "95th percentile";
+	opts.strokeWidth: 1;
+	opts.highlightSeriesOpts: { pointSize: 3, strokeWidth: 1.5 },
 	new Dygraph(
 		document.getElementById("95th"),
 		"95th.txt",
@@ -54,10 +57,8 @@ The data is gathered using essentially "<code>curl -L -w %{time_total} $URL</cod
 DNS resolution and redirect time. You can download the raw CSV
 <a href="frontpage.txt">here</a>.
 </div>
-<h4>Frontpage response time (raw)</h4>
 <div id="raw" style="width: 100%"></div>
 <div style="height: 100px"><!-- x axis labels stick out on the bottom, add some whitespace --></div>
-<h4>95th percentile</h4>
 <div id="95th" style="width: 100%"></div>
 <div style="height: 100px"><!-- x axis labels stick out on the bottom, add some whitespace --></div>
 <div id="notes">
