@@ -50,3 +50,6 @@ for row in parsed:
 		# Skip NaN
 		if f > 0:
 			day_rows[i].append(f)
+
+# Last day
+pct(day_rows)
