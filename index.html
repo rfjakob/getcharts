@@ -5,24 +5,30 @@
 <script src="dygraph-combined.js"></script>
 <script>
 document.addEventListener("DOMContentLoaded", function(event) {
+	opts={
+		valueRange: [0, 8.1],
+		xValueFormatter: Dygraph.dateString_,
+		xValueParser: function(x) { return 1000*parseInt(x); },
+		xTicker: Dygraph.dateTicker,
+		drawPoints: true,
+		strokeWidth: 0.0,
+		legend: "always",
+		pointSize: 2.5,
+		highlightSeriesOpts: { pointSize: 3, strokeWidth: 0.1 },
+		highlightSeriesBackgroundAlpha: 0.1,
+		colors: [ '#f88802', '#ee1111', '#007acc', '#a6a6a6' ],
+		ylabel: "seconds",
+		//title: "Response Time"
+	}
 	new Dygraph(
-		document.getElementById("chart"),
+		document.getElementById("raw"),
 		"frontpage.txt",
-		{
-			valueRange: [0, 8.1],
-			xValueFormatter: Dygraph.dateString_,
-			xValueParser: function(x) { return 1000*parseInt(x); },
-			xTicker: Dygraph.dateTicker,
-			drawPoints: true,
-			strokeWidth: 0.0,
-			legend: "always",
-			pointSize: 2.5,
-			highlightSeriesOpts: { pointSize: 3, strokeWidth: 0.1 },
-			highlightSeriesBackgroundAlpha: 0.1,
-			colors: [ '#f88802', '#ee1111', '#007acc', '#a6a6a6' ],
-			ylabel: "seconds",
-			title: "Response Time"
-		}
+		opts
+	);
+	new Dygraph(
+		document.getElementById("95th"),
+		"95th.txt",
+		opts
 	);
 });
 </script>
@@ -48,9 +54,12 @@ The data is gathered using essentially "<code>curl -L -w %{time_total} $URL</cod
 DNS resolution and redirect time. You can download the raw CSV
 <a href="frontpage.txt">here</a>.
 </div>
-<div id="chart" style="width: 100%"></div>
-<!-- x axis labels stick out on the bottom, add some whitespace -->
-<div style="height: 100px"></div>
+<h4>Frontpage response time (raw)</h4>
+<div id="raw" style="width: 100%"></div>
+<div style="height: 100px"><!-- x axis labels stick out on the bottom, add some whitespace --></div>
+<h4>95th percentile</h4>
+<div id="95th" style="width: 100%"></div>
+<div style="height: 100px"><!-- x axis labels stick out on the bottom, add some whitespace --></div>
 <div id="notes">
 <h4>Notes:</h4>
 <ul>
