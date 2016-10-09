@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		colors: [ '#f88802', '#ee1111', '#007acc', '#a6a6a6' ],
 		ylabel: "seconds",
 		title: "Frontpage response time (raw)"
-	}
+	};
 	new Dygraph(
 		document.getElementById("raw"),
 		"frontpage.txt",
@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 	);
 	opts.title = "95th percentile";
 	opts.strokeWidth: 1;
-	opts.highlightSeriesOpts: { pointSize: 3, strokeWidth: 1.5 },
+	opts.highlightSeriesOpts: { pointSize: 3, strokeWidth: 1.5 };
 	new Dygraph(
 		document.getElementById("95th"),
 		"95th.txt",
