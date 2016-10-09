@@ -26,8 +26,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		opts
 	);
 	opts.title = "95th percentile";
-	opts.strokeWidth: 1;
-	opts.highlightSeriesOpts: { pointSize: 3, strokeWidth: 1.5 };
+	opts.strokeWidth = 1;
+	opts.highlightSeriesOpts = { pointSize: 3, strokeWidth: 1.5 };
 	new Dygraph(
 		document.getElementById("95th"),
 		"95th.txt",
@@ -57,6 +57,7 @@ The data is gathered using essentially "<code>curl -L -w %{time_total} $URL</cod
 DNS resolution and redirect time. You can download the raw CSV
 <a href="frontpage.txt">here</a>.
 </div>
+<br>
 <div id="raw" style="width: 100%"></div>
 <div style="height: 100px"><!-- x axis labels stick out on the bottom, add some whitespace --></div>
 <div id="95th" style="width: 100%"></div>

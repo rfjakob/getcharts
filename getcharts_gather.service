@@ -1,7 +1,8 @@
-# Put this file into ~/.config/systemd/user
-# Also, you must "sudo loginctl enable-linger USERNAME"!
+# Copy into /etc/systemd/system , then enable using
+# systemctl enable getcharts_gather
 
 [Service]
+User=jakob
 ExecStart=/home/jakob/public_html/nuetzlich.net/getcharts/gather_loop.sh
 Restart=always
 RestartSec=10
