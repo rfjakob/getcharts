@@ -6,19 +6,19 @@
 <script>
 document.addEventListener("DOMContentLoaded", function(event) {
 	opts={
-		valueRange: [0, 8.1],
+		valueRange: [0, 10.1],
 		xValueFormatter: Dygraph.dateString_,
 		xValueParser: function(x) { return 1000*parseInt(x); },
 		xTicker: Dygraph.dateTicker,
 		drawPoints: true,
 		strokeWidth: 0.0,
 		legend: "always",
-		pointSize: 2.5,
-		highlightSeriesOpts: { pointSize: 3, strokeWidth: 0.1 },
+		pointSize: 1,
+		highlightSeriesOpts: { pointSize: 1, strokeWidth: 0.0 },
 		highlightSeriesBackgroundAlpha: 0.1,
 		colors: [ '#f88802', '#ee1111', '#007acc', '#a6a6a6' ],
 		ylabel: "seconds",
-		title: "Frontpage response time (raw)"
+		title: "Raw data"
 	};
 	new Dygraph(
 		document.getElementById("raw"),
@@ -27,6 +27,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 	);
 	opts.title = "95th percentile";
 	opts.strokeWidth = 1;
+	opts.pointSize = 2.4;
 	opts.highlightSeriesOpts = { pointSize: 3, strokeWidth: 1.5 };
 	new Dygraph(
 		document.getElementById("95th"),
@@ -41,6 +42,16 @@ h1, h4, div {
 }
 div#notes, div#intro {
 	max-width: 800px;
+}
+div.plotcontainer {
+	width: 100%;
+	height: 350px;
+	padding-bottom: 50px;
+	overflow: hidden;
+}
+div.plot {
+	width: 100%;
+	height: 300px;
 }
 </style>
 </head>
@@ -59,10 +70,8 @@ DNS resolution and redirect time. You can download the raw CSV
 Yes, September 2016 is missing from the data - sorry about that!
 </div>
 <br>
-<div id="raw" style="width: 100%"></div>
-<div style="height: 100px"><!-- x axis labels stick out on the bottom, add some whitespace --></div>
-<div id="95th" style="width: 100%"></div>
-<div style="height: 100px"><!-- x axis labels stick out on the bottom, add some whitespace --></div>
+<div class="plotcontainer"><div id="95th" class="plot"></div></div>
+<div class="plotcontainer"><div id="raw" class="plot"></div></div>
 <div id="notes">
 <h4>Notes:</h4>
 <ul>
