@@ -19,6 +19,7 @@ function curl_time_total {
 	--header "Upgrade-Insecure-Requests: 1" \
 	--header "User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36" \
 	--silent --location --fail -o /dev/null -w "%{time_total}" \
+	--max-time 20 \
 	$1
 }
 
