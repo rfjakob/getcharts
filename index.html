@@ -20,11 +20,13 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		ylabel: "seconds",
 		title: "Raw data"
 	};
+	/*
 	new Dygraph(
 		document.getElementById("raw"),
 		"frontpage.txt",
 		opts
 	);
+	*/
 	opts.title = "95th percentile";
 	opts.strokeWidth = 1;
 	opts.pointSize = 2.4;
@@ -71,7 +73,7 @@ Yes, September 2016 is missing from the data - sorry about that!
 </div>
 <br>
 <div class="plotcontainer"><div id="95th" class="plot"></div></div>
-<div class="plotcontainer"><div id="raw" class="plot"></div></div>
+<!-- <div class="plotcontainer"><div id="raw" class="plot"></div></div> -->
 <div id="notes">
 <h4>Notes:</h4>
 <ul>
